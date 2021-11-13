@@ -1,6 +1,8 @@
 const { execSync } = require('child_process')
-const { notify } = require('../notify')
+const { notify } = require('@iryu54/plugins-manager')
+const pathfs = require('path')
 const step = 0.1
+const icon = pathfs.resolve(__dirname, 'bulb.png')
 
 module.exports = {
   name: 'Brightness',
@@ -33,7 +35,7 @@ function getDevices() {
 function setBrightnessForDevices(amount) {
   const devices = getDevices()
   const [nextLevel] = devices.map(device => setBrightnessForDevice(device, amount))
-  notify(module.exports, `${nextLevel * 100}%`, {timeout: 1})
+  notify(module.exports, `${nextLevel * 100}%`, { timeout: 1, icon})
 }
 
 function setBrightnessForDevice(device, amount) {

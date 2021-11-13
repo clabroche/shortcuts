@@ -1,6 +1,6 @@
 {
   "name": "@iryu54/shortcuts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Little package to link my system shortcuts with advanced commands made in node.js",
   "main": "index.js",
   "bin": {
